@@ -107,17 +107,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TLC-Uk-SKJ">
+                                <rect key="frame" x="83" y="256" width="248" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e5R-Fd-mxy">
                                 <rect key="frame" x="83" y="302" width="248" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MDU-HI-b1t">
                                 <rect key="frame" x="83" y="348" width="248" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rk8-QA-39b">
                                 <rect key="frame" x="181" y="398" width="52" height="30"/>
@@ -138,12 +144,12 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TLC-Uk-SKJ">
-                                <rect key="frame" x="83" y="256" width="248" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*must contains least 6 symbols" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeH-sh-6dd">
+                                <rect key="frame" x="221" y="332" width="110" height="8"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                <color key="textColor" red="0.78043109178543091" green="0.78035813570022583" blue="0.79999715089797974" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -156,9 +162,11 @@
                             <constraint firstItem="0DR-CP-Wev" firstAttribute="top" secondItem="WLh-2T-Gxa" secondAttribute="top" id="N5Y-VZ-q63"/>
                             <constraint firstItem="TLC-Uk-SKJ" firstAttribute="width" secondItem="e5R-Fd-mxy" secondAttribute="width" id="Rko-Zo-N3d"/>
                             <constraint firstItem="e5R-Fd-mxy" firstAttribute="top" secondItem="TLC-Uk-SKJ" secondAttribute="bottom" constant="16" id="cp4-ha-C4G"/>
+                            <constraint firstItem="GeH-sh-6dd" firstAttribute="top" secondItem="e5R-Fd-mxy" secondAttribute="bottom" id="g69-ZV-3ma"/>
                             <constraint firstItem="e5R-Fd-mxy" firstAttribute="width" secondItem="MDU-HI-b1t" secondAttribute="width" id="icR-aK-Mg3"/>
                             <constraint firstItem="rk8-QA-39b" firstAttribute="top" secondItem="MDU-HI-b1t" secondAttribute="bottom" constant="20" id="lgU-sA-FC6"/>
                             <constraint firstItem="0DR-CP-Wev" firstAttribute="leading" secondItem="WLh-2T-Gxa" secondAttribute="leading" id="nUv-Yo-0m3"/>
+                            <constraint firstItem="GeH-sh-6dd" firstAttribute="trailing" secondItem="e5R-Fd-mxy" secondAttribute="trailing" id="rCV-JZ-1qb"/>
                             <constraint firstItem="MDU-HI-b1t" firstAttribute="centerX" secondItem="rk8-QA-39b" secondAttribute="centerX" id="tEY-Tl-hT7"/>
                             <constraint firstItem="MDU-HI-b1t" firstAttribute="top" secondItem="e5R-Fd-mxy" secondAttribute="bottom" constant="16" id="ufN-U9-qT5"/>
                         </constraints>
