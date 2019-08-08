@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class RegistrationViewController: UIViewController {
 
@@ -15,12 +16,15 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    @IBOutlet weak var successLabel: UILabel!
+    
+    var ref: DatabaseReference!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        ref = Database.database().reference()
     }
 
     @IBAction func signUpButton(_ sender: UIButton) {
@@ -35,7 +39,21 @@ class RegistrationViewController: UIViewController {
                     self.emailTextField.shake()
                 } else {
                     guard let authResult = authResult else { return }
-                    print(authResult.user.uid)
+                    let uid = authResult.user.uid
+                    print(uid)
+                    
+                    Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
+                        guard let strongSelf = self else { return }
+                        strongSelf.ref.child("users").child(uid).setValue(["email": email,
+                                                                           "confirmed": false,
+                                                                           "firstName": "",
+                                                                           "secondName": "",
+                                                                           "phoneNumber": "",
+                                                                           "uid": uid,
+                                                                           "birthday": ""])
+                        strongSelf.performSegue(withIdentifier: "segueFromRegistrationToTabBar", sender: self)
+                    }
+                   
                 }
                 print("authResult:", authResult)
                 print("error: ", error)
@@ -66,6 +84,8 @@ class RegistrationViewController: UIViewController {
     @IBAction func backBarButton(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "unwindSegueToLoginVC", sender: self)
     }
+    
+    
 }
 
 
@@ -77,4 +97,27 @@ extension UIView {
         animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
         layer.add(animation, forKey: "shake")
     }
+    
+    
 }
+
+//extension UIView {
+//    
+//    func tempPresent() {
+//        fadeIn(completion: {_ in
+//            self.fadeOut()
+//        })
+//        
+//    }
+//    
+//    func fadeIn(_ duration: TimeInterval = 1.0, delay: TimeInterval = 0.0, completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in}) {
+//        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
+//            self.alpha = 1.0
+//            }, completion: completion)  }
+//
+//    func fadeOut(_ duration: TimeInterval = 1.0, delay: TimeInterval = 0.0, completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in}) {
+//        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
+//            self.alpha = 0.0
+//            }, completion: completion)
+//    }
+//}

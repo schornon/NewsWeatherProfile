@@ -7,24 +7,34 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import Firebase
 
 class TabBarController: UITabBarController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    var tabBarViewModel : TabBarViewModel?
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tabBarViewModel = TabBarViewModel(clouser: { self.selectedIndex = 2 } )
+        //setupObserve()
     }
-    */
+    
+    private func setupObserve() {
+        
+//        self.tabBarViewModel!.ref.child("users/\(self.tabBarViewModel!.user.uid)/confirmed").observe(.childChanged) { (snapshot) in
+//            let value = snapshot.value as? NSDictionary ?? [:]
+//            let confirmed = value["confirmed"] as? Bool
+//            if confirmed == false {
+//                print("changed confirmed")
+//            }
+//        }
+    }
 
 }

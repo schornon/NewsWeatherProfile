@@ -12,12 +12,19 @@
 		A95CBAFC22F9AF7D0079E4FF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95CBAFB22F9AF7D0079E4FF /* TabBarController.swift */; };
 		A95CBAFF22F9C6880079E4FF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95CBAFE22F9C6880079E4FF /* RegistrationViewController.swift */; };
 		A95CBB0122F9CA290079E4FF /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95CBB0022F9CA290079E4FF /* ProfileDetailsViewController.swift */; };
+		A96D797222FC0C8A00509EAA /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D797122FC0C8A00509EAA /* NewsViewController.swift */; };
+		A96D797422FC0CA000509EAA /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D797322FC0CA000509EAA /* WeatherViewController.swift */; };
+		A96D797622FC0CB000509EAA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D797522FC0CB000509EAA /* ProfileViewController.swift */; };
+		A96D797822FC0CCD00509EAA /* SourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D797722FC0CCD00509EAA /* SourcesViewController.swift */; };
+		A9737D4722FAEB390042F0A4 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9737D4622FAEB390042F0A4 /* TabBarViewModel.swift */; };
+		A9737D4922FAEB810042F0A4 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9737D4822FAEB810042F0A4 /* UserProfile.swift */; };
 		A998B4CA22F8425E00ECF561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A998B4C922F8425E00ECF561 /* AppDelegate.swift */; };
 		A998B4CC22F8425E00ECF561 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A998B4CB22F8425E00ECF561 /* LoginViewController.swift */; };
 		A998B4CF22F8425E00ECF561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A998B4CD22F8425E00ECF561 /* Main.storyboard */; };
 		A998B4D122F8426F00ECF561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A998B4D022F8426F00ECF561 /* Assets.xcassets */; };
 		A998B4D422F8426F00ECF561 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A998B4D222F8426F00ECF561 /* LaunchScreen.storyboard */; };
 		A998B4DD22F845AB00ECF561 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A998B4DC22F845AB00ECF561 /* LoginViewModel.swift */; };
+		A9F9BE2922FB08C100A2418A /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9BE2822FB08C100A2418A /* Box.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +34,12 @@
 		A95CBAFB22F9AF7D0079E4FF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A95CBAFE22F9C6880079E4FF /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A95CBB0022F9CA290079E4FF /* ProfileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsViewController.swift; sourceTree = "<group>"; };
+		A96D797122FC0C8A00509EAA /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsViewController.swift; path = ../NewsViewController.swift; sourceTree = "<group>"; };
+		A96D797322FC0CA000509EAA /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherViewController.swift; path = ../WeatherViewController.swift; sourceTree = "<group>"; };
+		A96D797522FC0CB000509EAA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
+		A96D797722FC0CCD00509EAA /* SourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SourcesViewController.swift; path = ../SourcesViewController.swift; sourceTree = "<group>"; };
+		A9737D4622FAEB390042F0A4 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		A9737D4822FAEB810042F0A4 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		A998B4C622F8425E00ECF561 /* NewsWeatherProfile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsWeatherProfile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A998B4C922F8425E00ECF561 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A998B4CB22F8425E00ECF561 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +48,7 @@
 		A998B4D322F8426F00ECF561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A998B4D522F8426F00ECF561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A998B4DC22F845AB00ECF561 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A9F9BE2822FB08C100A2418A /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		E8837A362EA95921A9BB6572 /* Pods-NewsWeatherProfile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsWeatherProfile.release.xcconfig"; path = "Target Support Files/Pods-NewsWeatherProfile/Pods-NewsWeatherProfile.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +73,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A96D797922FC0CD700509EAA /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				A96D797122FC0C8A00509EAA /* NewsViewController.swift */,
+				A96D797322FC0CA000509EAA /* WeatherViewController.swift */,
+				A96D797522FC0CB000509EAA /* ProfileViewController.swift */,
+				A96D797722FC0CCD00509EAA /* SourcesViewController.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
 		A998B4BD22F8425E00ECF561 = {
 			isa = PBXGroup;
 			children = (
@@ -81,8 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				A998B4C922F8425E00ECF561 /* AppDelegate.swift */,
+				A9F9BE2822FB08C100A2418A /* Box.swift */,
 				A998B4DE22F845AF00ECF561 /* ViewModel */,
 				A998B4DB22F8459200ECF561 /* View */,
+				A95CBB0022F9CA290079E4FF /* ProfileDetailsViewController.swift */,
 				A998B4DF22F845B900ECF561 /* Model */,
 				A998B4CD22F8425E00ECF561 /* Main.storyboard */,
 				A998B4D022F8426F00ECF561 /* Assets.xcassets */,
@@ -98,8 +125,8 @@
 			children = (
 				A998B4CB22F8425E00ECF561 /* LoginViewController.swift */,
 				A95CBAFE22F9C6880079E4FF /* RegistrationViewController.swift */,
-				A95CBB0022F9CA290079E4FF /* ProfileDetailsViewController.swift */,
 				A95CBAFB22F9AF7D0079E4FF /* TabBarController.swift */,
+				A96D797922FC0CD700509EAA /* Tabs */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				A998B4DC22F845AB00ECF561 /* LoginViewModel.swift */,
+				A9737D4622FAEB390042F0A4 /* TabBarViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -115,6 +143,7 @@
 		A998B4DF22F845B900ECF561 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A9737D4822FAEB810042F0A4 /* UserProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,12 +272,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F9BE2922FB08C100A2418A /* Box.swift in Sources */,
 				A998B4CC22F8425E00ECF561 /* LoginViewController.swift in Sources */,
 				A95CBAFC22F9AF7D0079E4FF /* TabBarController.swift in Sources */,
+				A96D797222FC0C8A00509EAA /* NewsViewController.swift in Sources */,
+				A96D797822FC0CCD00509EAA /* SourcesViewController.swift in Sources */,
 				A998B4CA22F8425E00ECF561 /* AppDelegate.swift in Sources */,
 				A998B4DD22F845AB00ECF561 /* LoginViewModel.swift in Sources */,
+				A96D797622FC0CB000509EAA /* ProfileViewController.swift in Sources */,
+				A9737D4922FAEB810042F0A4 /* UserProfile.swift in Sources */,
 				A95CBAFF22F9C6880079E4FF /* RegistrationViewController.swift in Sources */,
+				A9737D4722FAEB390042F0A4 /* TabBarViewModel.swift in Sources */,
 				A95CBB0122F9CA290079E4FF /* ProfileDetailsViewController.swift in Sources */,
+				A96D797422FC0CA000509EAA /* WeatherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
