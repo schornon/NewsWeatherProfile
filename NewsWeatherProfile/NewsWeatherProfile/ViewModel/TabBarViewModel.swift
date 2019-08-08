@@ -31,7 +31,7 @@ class TabBarViewModel {
             
             self.ref.child("users/\(self.user.uid)").observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary ?? [:]
-                //print(value)
+                print(value)
                 self.userProfile = self.userData(value: value)
                 let confirmed = value["confirmed"] as? Bool
                 if confirmed == false {
