@@ -29,13 +29,15 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
         
         fillingFields()
         
-        if tabBarViewModel?.userProfile.confirmed == true {
-            self.lockTabItems(false)
+        if tabBarViewModel?.userProfile != nil {
+            if tabBarViewModel?.userProfile.confirmed == true {
+                self.lockTabItems(false)
+            } else {
+                self.lockTabItems(true)
+            }
         } else {
             self.lockTabItems(true)
         }
-        
-        
         
     }
     
@@ -50,14 +52,10 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
         birthdayTextFields[2].delegate = self
     }
     
-    
-    
     @IBAction func confirmButton(_ sender: UIButton) {
         if textFieldsValidation() == false {
             return
         }
-        print("here")
-        //let uid = tabBarViewModel!.userProfile.uid
         
         let firstName = firstNameTextField.text!
         let secondName = secondNameTextField.text!
@@ -65,6 +63,7 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
         
         let birthday = "\(birthdayTextFields[2].text!)-\(birthdayTextFields[1].text!)-\(birthdayTextFields[0].text!)"
         if validateBirthday(birthday: birthday) == false {
+            self.shakeBirthdayFields()
             return
         }
         tabBarViewModel?.userProfile.firstName = firstName
@@ -73,8 +72,15 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
         tabBarViewModel?.userProfile.birthday = birthday
         tabBarViewModel?.userProfile.confirmed = true
         
-        updateUserData()
+        //updateUserData()
+        ProfileViewModel.updateUserData(tabBarViewModel: tabBarViewModel)
         self.lockTabItems(false)
+    }
+    
+    private func shakeBirthdayFields() {
+        birthdayTextFields[0].shake()
+        birthdayTextFields[1].shake()
+        birthdayTextFields[2].shake()
     }
     
     private func validateBirthday(birthday: String) -> Bool {
@@ -83,27 +89,11 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         print(birthday)
         guard let date = dateFormatter.date(from: birthday) else { return false }
-        let currDate = Date()
-        if (currDate < date) {
-            birthdayTextFields[0].shake()
-            birthdayTextFields[1].shake()
-            birthdayTextFields[2].shake()
+        if (Date() < date) {
+            self.shakeBirthdayFields()
             return false
         }
         return true
-    }
-    
-    private func updateUserData() {
-    
-        let user = tabBarViewModel!.userProfile
-        let uid = tabBarViewModel!.userProfile.uid
-        tabBarViewModel!.ref.child("users").child(uid).setValue(["email": user!.email,
-                                                                 "confirmed": true,
-                                                                 "firstName": user!.firstName,
-                                                                 "secondName": user!.secondName,
-                                                                 "phoneNumber": user!.phoneNumber,
-                                                                 "uid": uid,
-                                                                 "birthday": user!.birthday])
     }
     
     private func textFieldsValidation() -> Bool {
@@ -130,15 +120,22 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     @IBAction func changePasswordButton(_ sender: UIButton) {
+        ProfileViewModel.setNew(password: newPasswordTextField.text!) {
+            self.newPasswordTextField.shake()
+        }
+        newPasswordTextField.text! = ""
     }
     
+    @IBAction func logOutButton(_ sender: UIButton) {
+        try! Auth.auth().signOut()
+        self.performSegue(withIdentifier: "segueLogOut", sender: self)
+    }
     
     private func fillingFields() {
         
         if tabBarViewModel?.userProfile != nil {
             fillFilds()
         }
-        
         self.tabBarViewModel?.myGroup.notify(queue: .main) {
             self.fillFilds()
         }
@@ -158,41 +155,11 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
             self.birthdayTextFields[1].text = "\(birthday![1])"
             self.birthdayTextFields[0].text = "\(birthday![2])"
         }
-        
     }
     
-    private func lockTabItems(_ u: Bool) {
+    private func lockTabItems(_ action: Bool) {
         
         let tabBarControllerItems = self.tabBarController?.tabBar.items
-        
-        if u == true {
-            
-            if let arrayOfTabBarItems = tabBarControllerItems as! AnyObject as? NSArray {
-                
-                
-                let tabBarItemONE = arrayOfTabBarItems[0] as! UITabBarItem
-                tabBarItemONE.isEnabled = false
-                
-                let tabBarItemTWO = arrayOfTabBarItems[1] as! UITabBarItem
-                tabBarItemTWO.isEnabled = false
-                
-                let tabBarItemFour = arrayOfTabBarItems[3] as! UITabBarItem
-                tabBarItemFour.isEnabled = false
-            }
-        } else {
-            if let arrayOfTabBarItems = tabBarControllerItems as! AnyObject as? NSArray {
-                
-                let tabBarItemONE = arrayOfTabBarItems[0] as! UITabBarItem
-                tabBarItemONE.isEnabled = true
-                
-                let tabBarItemTWO = arrayOfTabBarItems[1] as! UITabBarItem
-                tabBarItemTWO.isEnabled = true
-                
-                let tabBarItemFour = arrayOfTabBarItems[3] as! UITabBarItem
-                tabBarItemFour.isEnabled = true
-            }
-        }
-        
+        ProfileViewModel.lock(tabBarControllerItems: tabBarControllerItems, action)
     }
-
 }

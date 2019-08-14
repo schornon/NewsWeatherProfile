@@ -24,13 +24,18 @@ class LoginViewController: UIViewController {
             guard let strongSelf = self else { return }
             print("==================\n", user, strongSelf)
             print("error \(error)")
-            self!.performSegue(withIdentifier: "segueFromLoginToTabBar", sender: self)
+            if error == nil {
+                strongSelf.performSegue(withIdentifier: "segueFromLoginToTabBar", sender: self)
+            } else {
+                strongSelf.passwordTextField.shake()
+            }
+            //self!.performSegue(withIdentifier: "segueFromLoginToTabBar", sender: self)
         }
     }
     
     private func setTextInFields() {
-        loginTextField.text = "test@gmail.com"
-        passwordTextField.text = "test11"
+        loginTextField.text = "6@gmail.com"
+        passwordTextField.text = "666666"
     }
     
     @IBAction func unwindToLoginVC(segue: UIStoryboardSegue) {

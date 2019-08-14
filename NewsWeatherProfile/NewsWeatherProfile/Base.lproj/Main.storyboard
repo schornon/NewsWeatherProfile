@@ -339,7 +339,18 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDF-In-WUw">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Profile" id="5EA-AR-dv5"/>
+                                    <navigationItem title="Profile" id="5EA-AR-dv5">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="rWy-VN-xu5">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RcQ-D8-9Z5">
+                                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Log Out"/>
+                                                <connections>
+                                                    <action selector="logOutButton:" destination="03B-j5-8Py" eventType="touchUpInside" id="tNj-f7-658"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ffa-3O-WZD">
@@ -475,6 +486,7 @@
                         <outletCollection property="birthdayTextFields" destination="3Cy-ar-36K" collectionClass="NSMutableArray" id="xSV-nY-vv7"/>
                         <outletCollection property="birthdayTextFields" destination="tEG-YR-8xw" collectionClass="NSMutableArray" id="cGv-np-hKL"/>
                         <outletCollection property="birthdayTextFields" destination="19k-Rh-6cb" collectionClass="NSMutableArray" id="dzd-GZ-Pqp"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueLogOut" id="NVC-3h-LhV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Sg-xf-8JC" userLabel="First Responder" sceneMemberID="firstResponder"/>

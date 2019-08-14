@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9CCDB539B7651CF19AAFED72 /* Pods_NewsWeatherProfile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56ABFEDBDA16A05C73A00D82 /* Pods_NewsWeatherProfile.framework */; };
+		A913C99D230409C0009C1EA3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913C99C230409C0009C1EA3 /* ProfileViewModel.swift */; };
 		A95CBAF822F98FE30079E4FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A95CBAF722F98FE30079E4FF /* GoogleService-Info.plist */; };
 		A95CBAFC22F9AF7D0079E4FF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95CBAFB22F9AF7D0079E4FF /* TabBarController.swift */; };
 		A95CBAFF22F9C6880079E4FF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95CBAFE22F9C6880079E4FF /* RegistrationViewController.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		3C87EE35895A11A4208B3D43 /* Pods-NewsWeatherProfile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsWeatherProfile.debug.xcconfig"; path = "Target Support Files/Pods-NewsWeatherProfile/Pods-NewsWeatherProfile.debug.xcconfig"; sourceTree = "<group>"; };
 		56ABFEDBDA16A05C73A00D82 /* Pods_NewsWeatherProfile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsWeatherProfile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A913C99C230409C0009C1EA3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A95CBAF722F98FE30079E4FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A95CBAFB22F9AF7D0079E4FF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A95CBAFE22F9C6880079E4FF /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				A998B4DC22F845AB00ECF561 /* LoginViewModel.swift */,
 				A9737D4622FAEB390042F0A4 /* TabBarViewModel.swift */,
+				A913C99C230409C0009C1EA3 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				A998B4DD22F845AB00ECF561 /* LoginViewModel.swift in Sources */,
 				A96D797622FC0CB000509EAA /* ProfileViewController.swift in Sources */,
 				A9737D4922FAEB810042F0A4 /* UserProfile.swift in Sources */,
+				A913C99D230409C0009C1EA3 /* ProfileViewModel.swift in Sources */,
 				A9F6CC8022FD6E8700AE1840 /* Extension-ProfileViewController+UITextFieldDelegate.swift in Sources */,
 				A95CBAFF22F9C6880079E4FF /* RegistrationViewController.swift in Sources */,
 				A9737D4722FAEB390042F0A4 /* TabBarViewModel.swift in Sources */,
