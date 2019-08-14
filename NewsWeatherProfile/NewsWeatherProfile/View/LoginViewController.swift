@@ -29,7 +29,6 @@ class LoginViewController: UIViewController {
             } else {
                 strongSelf.passwordTextField.shake()
             }
-            //self!.performSegue(withIdentifier: "segueFromLoginToTabBar", sender: self)
         }
     }
     
@@ -41,6 +40,8 @@ class LoginViewController: UIViewController {
     @IBAction func unwindToLoginVC(segue: UIStoryboardSegue) {
         print("unwind from RegistrationViewController")
     }
+    
+    @IBAction func unwindLogOut(segue: UIStoryboardSegue) {}
     
 }
 

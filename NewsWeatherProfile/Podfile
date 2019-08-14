@@ -10,8 +10,9 @@ target 'NewsWeatherProfile' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
   pod 'Firebase/Core'
-
-
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'RecastAI'
 
 
 end

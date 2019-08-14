@@ -128,7 +128,7 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
     
     @IBAction func logOutButton(_ sender: UIButton) {
         try! Auth.auth().signOut()
-        self.performSegue(withIdentifier: "segueLogOut", sender: self)
+        self.performSegue(withIdentifier: "unwindSegueLogOut", sender: self)
     }
     
     private func fillingFields() {

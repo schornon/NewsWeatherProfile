@@ -17,6 +17,8 @@ extension ProfileViewController: UITextFieldDelegate {
             return textFieldOnlyDigitWithLen(textField: textField, range: range, string: string, maxLenght: 2)
         } else if textField == birthdayTextFields[2] {
             return textFieldOnlyDigitWithLen(textField: textField, range: range, string: string, maxLenght: 4)
+        } else if textField == phoneTextField {
+            return textFieldOnlyDigitWithLen(textField: textField, range: range, string: string, maxLenght: 20)
         }
         return true
     }

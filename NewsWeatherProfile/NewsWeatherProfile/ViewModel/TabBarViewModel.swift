@@ -16,9 +16,6 @@ class TabBarViewModel {
     
     let user = Auth.auth().currentUser!
     
-    //var confirmed : Box<Bool> = Box(false)
-    //var userProfile : Box<UserProfile> = Box(UserProfile())
-    
     let myGroup = DispatchGroup()
     
     var userProfile : UserProfile!

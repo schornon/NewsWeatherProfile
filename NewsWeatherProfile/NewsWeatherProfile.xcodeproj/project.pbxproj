@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		9CCDB539B7651CF19AAFED72 /* Pods_NewsWeatherProfile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56ABFEDBDA16A05C73A00D82 /* Pods_NewsWeatherProfile.framework */; };
 		A913C99D230409C0009C1EA3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913C99C230409C0009C1EA3 /* ProfileViewModel.swift */; };
+		A913C99F23041D68009C1EA3 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913C99E23041D68009C1EA3 /* WeatherViewModel.swift */; };
+		A913C9A123041D8D009C1EA3 /* WeatherMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913C9A023041D8D009C1EA3 /* WeatherMetadata.swift */; };
+		A913C9A323041DB5009C1EA3 /* WeatherNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913C9A223041DB5009C1EA3 /* WeatherNetworkManager.swift */; };
+		A913C9A623041DDB009C1EA3 /* Extension-WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913C9A523041DDB009C1EA3 /* Extension-WeatherViewController.swift */; };
+		A913C9A723041DDB009C1EA3 /* Extansion-WeatherViewController+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913C9A423041DDA009C1EA3 /* Extansion-WeatherViewController+UITextFieldDelegate.swift */; };
 		A95CBAF822F98FE30079E4FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A95CBAF722F98FE30079E4FF /* GoogleService-Info.plist */; };
 		A95CBAFC22F9AF7D0079E4FF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95CBAFB22F9AF7D0079E4FF /* TabBarController.swift */; };
 		A95CBAFF22F9C6880079E4FF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95CBAFE22F9C6880079E4FF /* RegistrationViewController.swift */; };
-		A95CBB0122F9CA290079E4FF /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95CBB0022F9CA290079E4FF /* ProfileDetailsViewController.swift */; };
 		A96D797222FC0C8A00509EAA /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D797122FC0C8A00509EAA /* NewsViewController.swift */; };
 		A96D797422FC0CA000509EAA /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D797322FC0CA000509EAA /* WeatherViewController.swift */; };
 		A96D797622FC0CB000509EAA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D797522FC0CB000509EAA /* ProfileViewController.swift */; };
@@ -33,10 +37,14 @@
 		3C87EE35895A11A4208B3D43 /* Pods-NewsWeatherProfile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsWeatherProfile.debug.xcconfig"; path = "Target Support Files/Pods-NewsWeatherProfile/Pods-NewsWeatherProfile.debug.xcconfig"; sourceTree = "<group>"; };
 		56ABFEDBDA16A05C73A00D82 /* Pods_NewsWeatherProfile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsWeatherProfile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A913C99C230409C0009C1EA3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		A913C99E23041D68009C1EA3 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		A913C9A023041D8D009C1EA3 /* WeatherMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMetadata.swift; sourceTree = "<group>"; };
+		A913C9A223041DB5009C1EA3 /* WeatherNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkManager.swift; sourceTree = "<group>"; };
+		A913C9A423041DDA009C1EA3 /* Extansion-WeatherViewController+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extansion-WeatherViewController+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		A913C9A523041DDB009C1EA3 /* Extension-WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-WeatherViewController.swift"; sourceTree = "<group>"; };
 		A95CBAF722F98FE30079E4FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A95CBAFB22F9AF7D0079E4FF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A95CBAFE22F9C6880079E4FF /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		A95CBB0022F9CA290079E4FF /* ProfileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsViewController.swift; sourceTree = "<group>"; };
 		A96D797122FC0C8A00509EAA /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsViewController.swift; path = ../NewsViewController.swift; sourceTree = "<group>"; };
 		A96D797322FC0CA000509EAA /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherViewController.swift; path = ../WeatherViewController.swift; sourceTree = "<group>"; };
 		A96D797522FC0CB000509EAA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +90,8 @@
 			children = (
 				A96D797122FC0C8A00509EAA /* NewsViewController.swift */,
 				A96D797322FC0CA000509EAA /* WeatherViewController.swift */,
+				A913C9A423041DDA009C1EA3 /* Extansion-WeatherViewController+UITextFieldDelegate.swift */,
+				A913C9A523041DDB009C1EA3 /* Extension-WeatherViewController.swift */,
 				A96D797522FC0CB000509EAA /* ProfileViewController.swift */,
 				A9F6CC7F22FD6E8700AE1840 /* Extension-ProfileViewController+UITextFieldDelegate.swift */,
 				A96D797722FC0CCD00509EAA /* SourcesViewController.swift */,
@@ -112,9 +122,9 @@
 			children = (
 				A998B4C922F8425E00ECF561 /* AppDelegate.swift */,
 				A9F9BE2822FB08C100A2418A /* Box.swift */,
+				A913C9A223041DB5009C1EA3 /* WeatherNetworkManager.swift */,
 				A998B4DE22F845AF00ECF561 /* ViewModel */,
 				A998B4DB22F8459200ECF561 /* View */,
-				A95CBB0022F9CA290079E4FF /* ProfileDetailsViewController.swift */,
 				A998B4DF22F845B900ECF561 /* Model */,
 				A998B4CD22F8425E00ECF561 /* Main.storyboard */,
 				A998B4D022F8426F00ECF561 /* Assets.xcassets */,
@@ -142,6 +152,7 @@
 				A998B4DC22F845AB00ECF561 /* LoginViewModel.swift */,
 				A9737D4622FAEB390042F0A4 /* TabBarViewModel.swift */,
 				A913C99C230409C0009C1EA3 /* ProfileViewModel.swift */,
+				A913C99E23041D68009C1EA3 /* WeatherViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -150,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				A9737D4822FAEB810042F0A4 /* UserProfile.swift */,
+				A913C9A023041D8D009C1EA3 /* WeatherMetadata.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,20 +290,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A913C9A323041DB5009C1EA3 /* WeatherNetworkManager.swift in Sources */,
+				A913C9A123041D8D009C1EA3 /* WeatherMetadata.swift in Sources */,
 				A9F9BE2922FB08C100A2418A /* Box.swift in Sources */,
 				A998B4CC22F8425E00ECF561 /* LoginViewController.swift in Sources */,
 				A95CBAFC22F9AF7D0079E4FF /* TabBarController.swift in Sources */,
 				A96D797222FC0C8A00509EAA /* NewsViewController.swift in Sources */,
 				A96D797822FC0CCD00509EAA /* SourcesViewController.swift in Sources */,
 				A998B4CA22F8425E00ECF561 /* AppDelegate.swift in Sources */,
+				A913C99F23041D68009C1EA3 /* WeatherViewModel.swift in Sources */,
 				A998B4DD22F845AB00ECF561 /* LoginViewModel.swift in Sources */,
 				A96D797622FC0CB000509EAA /* ProfileViewController.swift in Sources */,
+				A913C9A623041DDB009C1EA3 /* Extension-WeatherViewController.swift in Sources */,
 				A9737D4922FAEB810042F0A4 /* UserProfile.swift in Sources */,
 				A913C99D230409C0009C1EA3 /* ProfileViewModel.swift in Sources */,
 				A9F6CC8022FD6E8700AE1840 /* Extension-ProfileViewController+UITextFieldDelegate.swift in Sources */,
+				A913C9A723041DDB009C1EA3 /* Extansion-WeatherViewController+UITextFieldDelegate.swift in Sources */,
 				A95CBAFF22F9C6880079E4FF /* RegistrationViewController.swift in Sources */,
 				A9737D4722FAEB390042F0A4 /* TabBarViewModel.swift in Sources */,
-				A95CBB0122F9CA290079E4FF /* ProfileDetailsViewController.swift in Sources */,
 				A96D797422FC0CA000509EAA /* WeatherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
