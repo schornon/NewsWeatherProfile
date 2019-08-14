@@ -18,13 +18,14 @@ class RegistrationViewController: UIViewController {
     
     @IBOutlet weak var successLabel: UILabel!
     
-    var ref: DatabaseReference!
+    //var ref: DatabaseReference!
+    var loginViewModel = LoginViewModel()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ref = Database.database().reference()
+        //ref = Database.database().reference()
     }
 
     @IBAction func signUpButton(_ sender: UIButton) {
@@ -34,29 +35,10 @@ class RegistrationViewController: UIViewController {
             let confPass = confirmPasswordTextField.text else { return }
         if textFieldsValidation(email, password, confPass) {
             print("validation ok")
-            Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-                if error != nil {
-                    self.emailTextField.shake()
-                } else {
-                    guard let authResult = authResult else { return }
-                    let uid = authResult.user.uid
-                    print(uid)
-                    
-                    Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
-                        guard let strongSelf = self else { return }
-                        strongSelf.ref.child("users").child(uid).setValue(["email": email,
-                                                                           "confirmed": false,
-                                                                           "firstName": "",
-                                                                           "secondName": "",
-                                                                           "phoneNumber": "",
-                                                                           "uid": uid,
-                                                                           "birthday": ""])
-                        strongSelf.performSegue(withIdentifier: "segueFromRegistrationToTabBar", sender: self)
-                    }
-                   
-                }
-                print("authResult:", authResult)
-                print("error: ", error)
+            loginViewModel.createUser(email: email, password: password, successHandle: {
+                self.performSegue(withIdentifier: "segueFromRegistrationToTabBar", sender: self)
+            }) {
+                self.emailTextField.shake()
             }
         }
     }
@@ -83,19 +65,6 @@ class RegistrationViewController: UIViewController {
     
     @IBAction func backBarButton(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "unwindSegueToLoginVC", sender: self)
-    }
-    
-    
-}
-
-
-extension UIView {
-    func shake() {
-        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
-        animation.duration = 0.6
-        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
-        layer.add(animation, forKey: "shake")
     }
     
     
