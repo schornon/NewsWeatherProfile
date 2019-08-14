@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITabBarControllerDelegate {
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var secondNameTextField: UITextField!
@@ -29,31 +29,84 @@ class ProfileViewController: UIViewController {
         
         fillingFields()
         
+        if tabBarViewModel?.userProfile.confirmed == true {
+            self.lockTabItems(false)
+        } else {
+            self.lockTabItems(true)
+        }
+        
+        
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        firstNameTextField.delegate = self
+        secondNameTextField.delegate = self
+        phoneTextField.delegate = self
+        birthdayTextFields[0].delegate = self
+        birthdayTextFields[1].delegate = self
+        birthdayTextFields[2].delegate = self
     }
     
     
     
     @IBAction func confirmButton(_ sender: UIButton) {
-        if textFiildsValidation() == false {
+        if textFieldsValidation() == false {
             return
         }
         print("here")
-        let uid = tabBarViewModel!.userProfile.uid
+        //let uid = tabBarViewModel!.userProfile.uid
         
-        let firstName = firstNameTextField.text
-        let secondName = secondNameTextField.text
-        let phone = phoneTextField.text
+        let firstName = firstNameTextField.text!
+        let secondName = secondNameTextField.text!
+        let phone = phoneTextField.text!
         
-        tabBarViewModel!.ref.child("users/\(uid)/").setValue(["firstName": firstName, "secondName": secondName, "phoneNumber": phone])
+        let birthday = "\(birthdayTextFields[2].text!)-\(birthdayTextFields[1].text!)-\(birthdayTextFields[0].text!)"
+        if validateBirthday(birthday: birthday) == false {
+            return
+        }
+        tabBarViewModel?.userProfile.firstName = firstName
+        tabBarViewModel?.userProfile.secondName = secondName
+        tabBarViewModel?.userProfile.phoneNumber = phone
+        tabBarViewModel?.userProfile.birthday = birthday
+        tabBarViewModel?.userProfile.confirmed = true
+        
+        updateUserData()
+        self.lockTabItems(false)
     }
     
-    private func textFiildsValidation() -> Bool {
+    private func validateBirthday(birthday: String) -> Bool {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        print(birthday)
+        guard let date = dateFormatter.date(from: birthday) else { return false }
+        let currDate = Date()
+        if (currDate < date) {
+            birthdayTextFields[0].shake()
+            birthdayTextFields[1].shake()
+            birthdayTextFields[2].shake()
+            return false
+        }
+        return true
+    }
+    
+    private func updateUserData() {
+    
+        let user = tabBarViewModel!.userProfile
+        let uid = tabBarViewModel!.userProfile.uid
+        tabBarViewModel!.ref.child("users").child(uid).setValue(["email": user!.email,
+                                                                 "confirmed": true,
+                                                                 "firstName": user!.firstName,
+                                                                 "secondName": user!.secondName,
+                                                                 "phoneNumber": user!.phoneNumber,
+                                                                 "uid": uid,
+                                                                 "birthday": user!.birthday])
+    }
+    
+    private func textFieldsValidation() -> Bool {
         if firstNameTextField.text!.isEmpty {
             firstNameTextField.shake()
             return false
@@ -63,13 +116,13 @@ class ProfileViewController: UIViewController {
         } else if phoneTextField!.text!.isEmpty {
             phoneTextField.shake()
             return false
-        } else if birthdayTextFields![0].text!.isEmpty {
+        } else if birthdayTextFields![0].text!.isEmpty || birthdayTextFields![0].text!.count < 2 {
             birthdayTextFields[0].shake()
             return false
-        } else if birthdayTextFields![1].text!.isEmpty {
+        } else if birthdayTextFields![1].text!.isEmpty || birthdayTextFields![1].text!.count < 2 {
             birthdayTextFields[1].shake()
             return false
-        } else if birthdayTextFields[2].text!.isEmpty {
+        } else if birthdayTextFields[2].text!.isEmpty || birthdayTextFields![2].text!.count < 4 {
             birthdayTextFields[2].shake()
             return false
         }
@@ -80,26 +133,66 @@ class ProfileViewController: UIViewController {
     }
     
     
-    
-    
     private func fillingFields() {
         
-        guard let firstName = self.tabBarViewModel?.userProfile.firstName else { return }
-        guard let secondName = self.tabBarViewModel?.userProfile.secondName else { return }
-        guard let phoneNumber = self.tabBarViewModel?.userProfile.phoneNumber else { return }
+        if tabBarViewModel?.userProfile != nil {
+            fillFilds()
+        }
+        
+        self.tabBarViewModel?.myGroup.notify(queue: .main) {
+            self.fillFilds()
+        }
+    }
+    
+    private func fillFilds() {
+        let firstName = self.tabBarViewModel?.userProfile.firstName
+        let secondName = self.tabBarViewModel?.userProfile.secondName
+        let phoneNumber = self.tabBarViewModel?.userProfile.phoneNumber
+        
         self.firstNameTextField.text = firstName
         self.secondNameTextField.text = secondName
         self.phoneTextField.text = phoneNumber
-        //self.birthdayTextFields[0].text = self.tabBarViewModel?.userProfile.birthday
+        if self.tabBarViewModel?.userProfile.birthday != "" {
+            let birthday = self.tabBarViewModel?.userProfile.birthday.split(separator: "-")
+            self.birthdayTextFields[2].text = "\(birthday![0])"
+            self.birthdayTextFields[1].text = "\(birthday![1])"
+            self.birthdayTextFields[0].text = "\(birthday![2])"
+        }
         
-        //
-//        let uid = tabBarViewModel!.user.uid
-//        tabBarViewModel!.ref.child("users/\(uid)").observeSingleEvent(of: .value) { (snapshot) in
-//            let value = snapshot.value as? NSDictionary ?? [:]
-//            print(value)
-//            print(value["email"])
-//            self.firstNameTextField.text = value["email"] as! String
-//        }
+    }
+    
+    private func lockTabItems(_ u: Bool) {
+        
+        let tabBarControllerItems = self.tabBarController?.tabBar.items
+        
+        if u == true {
+            
+            if let arrayOfTabBarItems = tabBarControllerItems as! AnyObject as? NSArray {
+                
+                
+                let tabBarItemONE = arrayOfTabBarItems[0] as! UITabBarItem
+                tabBarItemONE.isEnabled = false
+                
+                let tabBarItemTWO = arrayOfTabBarItems[1] as! UITabBarItem
+                tabBarItemTWO.isEnabled = false
+                
+                let tabBarItemFour = arrayOfTabBarItems[3] as! UITabBarItem
+                tabBarItemFour.isEnabled = false
+            }
+        } else {
+            if let arrayOfTabBarItems = tabBarControllerItems as! AnyObject as? NSArray {
+                
+                let tabBarItemONE = arrayOfTabBarItems[0] as! UITabBarItem
+                tabBarItemONE.isEnabled = true
+                
+                let tabBarItemTWO = arrayOfTabBarItems[1] as! UITabBarItem
+                tabBarItemTWO.isEnabled = true
+                
+                let tabBarItemFour = arrayOfTabBarItems[3] as! UITabBarItem
+                tabBarItemFour.isEnabled = true
+            }
+        }
+        
     }
 
 }

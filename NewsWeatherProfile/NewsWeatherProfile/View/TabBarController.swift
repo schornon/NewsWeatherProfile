@@ -23,18 +23,17 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         tabBarViewModel = TabBarViewModel(clouser: { self.selectedIndex = 2 } )
-        //setupObserve()
+        print("user profile in tabBarController : \(tabBarViewModel?.userProfile)")
     }
     
     private func setupObserve() {
         
-//        self.tabBarViewModel!.ref.child("users/\(self.tabBarViewModel!.user.uid)/confirmed").observe(.childChanged) { (snapshot) in
-//            let value = snapshot.value as? NSDictionary ?? [:]
-//            let confirmed = value["confirmed"] as? Bool
-//            if confirmed == false {
-//                print("changed confirmed")
-//            }
-//        }
+
     }
 
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        print("should")
+        return true
+    }
+    
 }

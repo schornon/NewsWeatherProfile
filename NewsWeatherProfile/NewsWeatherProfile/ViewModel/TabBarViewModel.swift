@@ -19,10 +19,12 @@ class TabBarViewModel {
     //var confirmed : Box<Bool> = Box(false)
     //var userProfile : Box<UserProfile> = Box(UserProfile())
     
+    let myGroup = DispatchGroup()
     
     var userProfile : UserProfile!
     
     init(clouser: @escaping ()->()) {
+        myGroup.enter()
         ref = Database.database().reference()
         
         print("curr user: \(user.uid)")
@@ -37,6 +39,7 @@ class TabBarViewModel {
                 if confirmed == false {
                     print("false")
                     clouser()
+                    self.myGroup.leave()
                 }
             })
         }
