@@ -34,7 +34,7 @@ extension ProfileViewController {
                 self!.selectedCountry.count > 0
                 else { return }
             strongSelf.countryButton.setTitle(strongSelf.selectedCountry[0], for: .normal)
-            strongSelf.cityButton.setTitle("Chouse city", for: .normal)
+            strongSelf.cityButton.setTitle("Chose city", for: .normal)
             
             cityMenu = RSSelectionMenu(dataSource: locationData.cityData[selectedItems[0]]!) { (cell, name, indexPath) in
                 cell.textLabel!.text = name
