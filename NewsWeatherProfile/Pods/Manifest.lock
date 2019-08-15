@@ -75,6 +75,7 @@ PODS:
   - RecastAI (3.5.0):
     - Alamofire
     - ObjectMapper
+  - RSSelectionMenu (6.0.4)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
@@ -84,6 +85,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - RecastAI
+  - RSSelectionMenu
   - SwiftyJSON
 
 SPEC REPOS:
@@ -103,6 +105,7 @@ SPEC REPOS:
     - nanopb
     - ObjectMapper
     - RecastAI
+    - RSSelectionMenu
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -121,8 +124,9 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   RecastAI: d9abaf97f914a07cc10ee0cb8be89bfe2b942280
+  RSSelectionMenu: 1dc497c68e81aa09e6c7f91432403cc2bc5ad816
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 4f32c0d9c9d682734b31c02bac4fbc80480e2910
+PODFILE CHECKSUM: e7e75be1f8f6926783536f03978e54bbfeb44ef0
 
 COCOAPODS: 1.7.5

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import RSSelectionMenu
 
 class ProfileViewController: UIViewController, UITabBarControllerDelegate {
 
@@ -20,6 +21,13 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
     weak var tabBarViewModel : TabBarViewModel?
     
     @IBOutlet weak var newPasswordTextField: UITextField!
+    
+    @IBOutlet weak var countryButton: UIButton!
+    @IBOutlet weak var cityButton: UIButton!
+    var locationMenu = [RSSelectionMenu<String>]()
+    var selectedCountry = [String]()
+    var selectedCity = [String]()
+    
     
     override func viewWillAppear(_ animated: Bool) {
         if tabBarViewModel == nil {
@@ -50,6 +58,7 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
         birthdayTextFields[0].delegate = self
         birthdayTextFields[1].delegate = self
         birthdayTextFields[2].delegate = self
+        setupMenu()
     }
     
     @IBAction func confirmButton(_ sender: UIButton) {
@@ -75,12 +84,6 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
         //updateUserData()
         ProfileViewModel.updateUserData(tabBarViewModel: tabBarViewModel)
         self.lockTabItems(false)
-    }
-    
-    private func shakeBirthdayFields() {
-        birthdayTextFields[0].shake()
-        birthdayTextFields[1].shake()
-        birthdayTextFields[2].shake()
     }
     
     private func validateBirthday(birthday: String) -> Bool {
@@ -162,4 +165,16 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
         let tabBarControllerItems = self.tabBarController?.tabBar.items
         ProfileViewModel.lock(tabBarControllerItems: tabBarControllerItems, action)
     }
+    
+    @IBAction func countryOrCityPressed(_ sender: UIButton) {
+        if sender == countryButton {
+            self.locationMenu[0].show(style: .alert(title: "Select your country", action: nil, height: nil), from: self)
+        } else if sender == cityButton {
+            self.locationMenu[1].show(style: .alert(title: "Select your city", action: nil, height: nil), from: self)
+        }
+    }
+    
+    
+    
+    
 }

@@ -30,6 +30,8 @@
 		A998B4D122F8426F00ECF561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A998B4D022F8426F00ECF561 /* Assets.xcassets */; };
 		A998B4D422F8426F00ECF561 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A998B4D222F8426F00ECF561 /* LaunchScreen.storyboard */; };
 		A998B4DD22F845AB00ECF561 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A998B4DC22F845AB00ECF561 /* LoginViewModel.swift */; };
+		A9D08345230587200095C476 /* Extension-ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D08344230587200095C476 /* Extension-ProfileViewController.swift */; };
+		A9D08347230592C30095C476 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D08346230592C30095C476 /* LocationData.swift */; };
 		A9F6CC8022FD6E8700AE1840 /* Extension-ProfileViewController+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F6CC7F22FD6E8700AE1840 /* Extension-ProfileViewController+UITextFieldDelegate.swift */; };
 		A9F9BE2922FB08C100A2418A /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9BE2822FB08C100A2418A /* Box.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +63,8 @@
 		A998B4D322F8426F00ECF561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A998B4D522F8426F00ECF561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A998B4DC22F845AB00ECF561 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A9D08344230587200095C476 /* Extension-ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-ProfileViewController.swift"; sourceTree = "<group>"; };
+		A9D08346230592C30095C476 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		A9F6CC7F22FD6E8700AE1840 /* Extension-ProfileViewController+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-ProfileViewController+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		A9F9BE2822FB08C100A2418A /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		E8837A362EA95921A9BB6572 /* Pods-NewsWeatherProfile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsWeatherProfile.release.xcconfig"; path = "Target Support Files/Pods-NewsWeatherProfile/Pods-NewsWeatherProfile.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 				A913C9A423041DDA009C1EA3 /* Extansion-WeatherViewController+UITextFieldDelegate.swift */,
 				A913C9A523041DDB009C1EA3 /* Extension-WeatherViewController.swift */,
 				A96D797522FC0CB000509EAA /* ProfileViewController.swift */,
+				A9D08344230587200095C476 /* Extension-ProfileViewController.swift */,
 				A9F6CC7F22FD6E8700AE1840 /* Extension-ProfileViewController+UITextFieldDelegate.swift */,
 				A96D797722FC0CCD00509EAA /* SourcesViewController.swift */,
 			);
@@ -164,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				A9737D4822FAEB810042F0A4 /* UserProfile.swift */,
+				A9D08346230592C30095C476 /* LocationData.swift */,
 				A913C9A023041D8D009C1EA3 /* WeatherMetadata.swift */,
 			);
 			path = Model;
@@ -303,6 +309,7 @@
 				A96D797822FC0CCD00509EAA /* SourcesViewController.swift in Sources */,
 				A998B4CA22F8425E00ECF561 /* AppDelegate.swift in Sources */,
 				A913C99F23041D68009C1EA3 /* WeatherViewModel.swift in Sources */,
+				A9D08345230587200095C476 /* Extension-ProfileViewController.swift in Sources */,
 				A998B4DD22F845AB00ECF561 /* LoginViewModel.swift in Sources */,
 				A96D797622FC0CB000509EAA /* ProfileViewController.swift in Sources */,
 				A913C9A623041DDB009C1EA3 /* Extension-WeatherViewController.swift in Sources */,
@@ -312,6 +319,7 @@
 				A913C9A723041DDB009C1EA3 /* Extansion-WeatherViewController+UITextFieldDelegate.swift in Sources */,
 				A95CBAFF22F9C6880079E4FF /* RegistrationViewController.swift in Sources */,
 				A9737D4722FAEB390042F0A4 /* TabBarViewModel.swift in Sources */,
+				A9D08347230592C30095C476 /* LocationData.swift in Sources */,
 				A96D797422FC0CA000509EAA /* WeatherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

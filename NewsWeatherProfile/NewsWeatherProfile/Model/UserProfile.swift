@@ -17,4 +17,3 @@ struct UserProfile {
     var email : String = ""
     var confirmed : Bool = false
 }
-

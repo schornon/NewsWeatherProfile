@@ -13,6 +13,6 @@ target 'NewsWeatherProfile' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'RecastAI'
-
+  pod 'RSSelectionMenu'
 
 end

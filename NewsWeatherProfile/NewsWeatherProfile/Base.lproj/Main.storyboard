@@ -466,35 +466,41 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnR-23-RLc">
-                                <rect key="frame" x="171.5" y="535.5" width="55" height="30"/>
+                                <rect key="frame" x="179.5" y="535.5" width="55" height="30"/>
                                 <state key="normal" title="Confirm"/>
                                 <connections>
                                     <action selector="confirmButton:" destination="03B-j5-8Py" eventType="touchUpInside" id="7IY-2F-dxS"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hdB-ou-dOF">
-                                <rect key="frame" x="75" y="595.5" width="248" height="30"/>
+                                <rect key="frame" x="83" y="595.5" width="248" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country (DropDown pod)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBA-Sz-UXm">
-                                <rect key="frame" x="115.5" y="459.5" width="183" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.78043109180000003" green="0.78035813570000001" blue="0.79999715090000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City (DropDown pod)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7g-Pk-tWM">
-                                <rect key="frame" x="122" y="495.5" width="154" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.78043109180000003" green="0.78035813570000001" blue="0.79999715090000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8y-Yo-3HZ">
-                                <rect key="frame" x="137.5" y="641.5" width="123" height="30"/>
+                                <rect key="frame" x="145.5" y="641.5" width="123" height="30"/>
                                 <state key="normal" title="Change password"/>
                                 <connections>
                                     <action selector="changePasswordButton:" destination="03B-j5-8Py" eventType="touchUpInside" id="Fgg-kv-kwf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5N-Ct-B1h">
+                                <rect key="frame" x="156.5" y="453.5" width="101" height="30"/>
+                                <state key="normal" title="Chose country">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="countryOrCityPressed:" destination="03B-j5-8Py" eventType="touchUpInside" id="dhz-4m-Nwh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvP-aB-1qz">
+                                <rect key="frame" x="170.5" y="493.5" width="73" height="30"/>
+                                <state key="normal" title="Chose city">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="countryOrCityPressed:" destination="03B-j5-8Py" eventType="touchUpInside" id="b4C-e1-TNm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -504,32 +510,32 @@
                             <constraint firstItem="YDF-In-WUw" firstAttribute="trailing" secondItem="Qru-Hf-ABm" secondAttribute="trailing" id="4se-0H-YZl"/>
                             <constraint firstItem="tEG-YR-8xw" firstAttribute="centerY" secondItem="Qru-Hf-ABm" secondAttribute="centerY" id="4uf-tr-XN8"/>
                             <constraint firstItem="iXq-GO-42P" firstAttribute="top" secondItem="ffa-3O-WZD" secondAttribute="bottom" constant="16" id="6Lw-kS-wMe"/>
-                            <constraint firstItem="p7g-Pk-tWM" firstAttribute="centerX" secondItem="sBA-Sz-UXm" secondAttribute="centerX" constant="-8" id="6hB-aG-pVC"/>
                             <constraint firstItem="iXq-GO-42P" firstAttribute="width" secondItem="m1u-zN-pEP" secondAttribute="width" id="818-Mp-IPy"/>
+                            <constraint firstItem="tvP-aB-1qz" firstAttribute="top" secondItem="o5N-Ct-B1h" secondAttribute="bottom" constant="10" id="9is-gv-V3A"/>
+                            <constraint firstItem="fnR-23-RLc" firstAttribute="centerX" secondItem="Qru-Hf-ABm" secondAttribute="centerX" id="Aei-8h-LC2"/>
                             <constraint firstItem="YDF-In-WUw" firstAttribute="top" secondItem="Qru-Hf-ABm" secondAttribute="top" id="B8Z-9n-QnZ"/>
-                            <constraint firstItem="sBA-Sz-UXm" firstAttribute="top" secondItem="tEG-YR-8xw" secondAttribute="bottom" constant="16" id="Czf-9S-uiz"/>
                             <constraint firstItem="3Cy-ar-36K" firstAttribute="centerX" secondItem="Qru-Hf-ABm" secondAttribute="centerX" constant="-80" id="DAt-my-Ucd"/>
                             <constraint firstItem="iXq-GO-42P" firstAttribute="centerX" secondItem="Qru-Hf-ABm" secondAttribute="centerX" id="ElZ-9r-nts"/>
                             <constraint firstItem="hdB-ou-dOF" firstAttribute="top" secondItem="fnR-23-RLc" secondAttribute="bottom" constant="30" id="JO1-qC-CWa"/>
                             <constraint firstItem="aHj-6y-wok" firstAttribute="top" secondItem="m1u-zN-pEP" secondAttribute="bottom" constant="16" id="KIw-yQ-ojx"/>
                             <constraint firstItem="R8y-Yo-3HZ" firstAttribute="centerX" secondItem="hdB-ou-dOF" secondAttribute="centerX" id="Kdh-tc-x3T"/>
+                            <constraint firstItem="tvP-aB-1qz" firstAttribute="centerX" secondItem="Qru-Hf-ABm" secondAttribute="centerX" id="Kwb-5w-Xly"/>
                             <constraint firstItem="YDF-In-WUw" firstAttribute="leading" secondItem="Qru-Hf-ABm" secondAttribute="leading" id="P1a-C3-8oY"/>
                             <constraint firstItem="m1u-zN-pEP" firstAttribute="centerX" secondItem="Qru-Hf-ABm" secondAttribute="centerX" id="PQn-ik-yYq"/>
                             <constraint firstItem="3Cy-ar-36K" firstAttribute="centerY" secondItem="tEG-YR-8xw" secondAttribute="centerY" id="PgD-Fa-TXZ"/>
+                            <constraint firstItem="o5N-Ct-B1h" firstAttribute="centerX" secondItem="Qru-Hf-ABm" secondAttribute="centerX" id="QZR-aW-Ea7"/>
                             <constraint firstItem="19k-Rh-6cb" firstAttribute="centerX" secondItem="Qru-Hf-ABm" secondAttribute="centerX" constant="80" id="RXd-GN-oVa"/>
                             <constraint firstItem="ffa-3O-WZD" firstAttribute="width" secondItem="iXq-GO-42P" secondAttribute="width" id="U56-eJ-MGH"/>
                             <constraint firstItem="tEG-YR-8xw" firstAttribute="centerX" secondItem="Qru-Hf-ABm" secondAttribute="centerX" constant="-1" id="VJ9-T8-k3b"/>
                             <constraint firstItem="hdB-ou-dOF" firstAttribute="width" secondItem="dgM-6v-g9s" secondAttribute="width" multiplier="6/10" id="VVh-Xp-8yp"/>
                             <constraint firstItem="m1u-zN-pEP" firstAttribute="top" secondItem="iXq-GO-42P" secondAttribute="bottom" constant="16" id="buN-gX-Am8"/>
                             <constraint firstItem="19k-Rh-6cb" firstAttribute="centerY" secondItem="tEG-YR-8xw" secondAttribute="centerY" id="fT4-Zk-g6H"/>
-                            <constraint firstItem="fnR-23-RLc" firstAttribute="top" secondItem="p7g-Pk-tWM" secondAttribute="bottom" constant="20" id="j35-Pz-nw8"/>
-                            <constraint firstItem="p7g-Pk-tWM" firstAttribute="top" secondItem="sBA-Sz-UXm" secondAttribute="bottom" constant="16" id="pxy-3o-mDz"/>
+                            <constraint firstItem="o5N-Ct-B1h" firstAttribute="top" secondItem="tEG-YR-8xw" secondAttribute="bottom" constant="10" id="hvY-IU-VFJ"/>
+                            <constraint firstItem="fnR-23-RLc" firstAttribute="top" secondItem="tvP-aB-1qz" secondAttribute="bottom" constant="12" id="iJn-cS-sFW"/>
                             <constraint firstItem="m1u-zN-pEP" firstAttribute="width" secondItem="dgM-6v-g9s" secondAttribute="width" multiplier="6/10" id="rcI-qF-fh3"/>
                             <constraint firstItem="hdB-ou-dOF" firstAttribute="centerX" secondItem="fnR-23-RLc" secondAttribute="centerX" id="ri9-CI-cFd"/>
-                            <constraint firstItem="sBA-Sz-UXm" firstAttribute="centerX" secondItem="Qru-Hf-ABm" secondAttribute="centerX" id="saN-fL-sQu"/>
                             <constraint firstItem="R8y-Yo-3HZ" firstAttribute="top" secondItem="hdB-ou-dOF" secondAttribute="bottom" constant="16" id="tN2-nn-bGh"/>
                             <constraint firstItem="tEG-YR-8xw" firstAttribute="top" secondItem="aHj-6y-wok" secondAttribute="bottom" constant="10" id="xa8-Ds-eE4"/>
-                            <constraint firstItem="fnR-23-RLc" firstAttribute="centerX" secondItem="p7g-Pk-tWM" secondAttribute="centerX" id="yua-tp-iHO"/>
                             <constraint firstItem="aHj-6y-wok" firstAttribute="centerX" secondItem="tEG-YR-8xw" secondAttribute="centerX" id="zb4-Vx-269"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qru-Hf-ABm"/>
@@ -537,6 +543,8 @@
                     <tabBarItem key="tabBarItem" title="" image="profile" selectedImage="profile" id="M38-sx-R9J"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cityButton" destination="tvP-aB-1qz" id="Y3R-mz-oRK"/>
+                        <outlet property="countryButton" destination="o5N-Ct-B1h" id="fEv-PT-y1E"/>
                         <outlet property="firstNameTextField" destination="ffa-3O-WZD" id="kEF-3D-EpB"/>
                         <outlet property="newPasswordTextField" destination="hdB-ou-dOF" id="CU6-AC-9N1"/>
                         <outlet property="phoneTextField" destination="m1u-zN-pEP" id="97Q-TG-rm2"/>

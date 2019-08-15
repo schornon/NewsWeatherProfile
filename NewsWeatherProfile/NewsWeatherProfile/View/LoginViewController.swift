@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //setTextInFields()
+        setTextInFields()
     }
 
     @IBAction func loginButton(_ sender: UIButton) {
@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
     
     private func setTextInFields() {
         loginTextField.text = "6@gmail.com"
-        passwordTextField.text = "666666"
+        passwordTextField.text = "666667"
     }
     
     @IBAction func unwindToLoginVC(segue: UIStoryboardSegue) {
