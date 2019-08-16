@@ -30,7 +30,9 @@ class ProfileViewModel {
                                                                  "secondName": user!.secondName,
                                                                  "phoneNumber": user!.phoneNumber,
                                                                  "uid": uid,
-                                                                 "birthday": user!.birthday])
+                                                                 "birthday": user!.birthday,
+                                                                 "country": user!.country,
+                                                                 "city": user!.city])
     }
     
     class func lock(tabBarControllerItems: [UITabBarItem]?, _ action: Bool) {

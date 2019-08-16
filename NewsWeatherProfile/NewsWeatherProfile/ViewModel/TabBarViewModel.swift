@@ -52,6 +52,8 @@ class TabBarViewModel {
         let phoneNumber = value["phoneNumber"] ?? ""
         let uid = value["uid"] ?? ""
         let birthday = value["birthday"] ?? ""
+        let country = value["country"] ?? "Chose country"
+        let city = value["city"] ?? "Chose city"
         
         return UserProfile(birthday: birthday as! String,
                            firstName: firstName as! String,
@@ -59,7 +61,9 @@ class TabBarViewModel {
                            phoneNumber: phoneNumber as! String,
                            uid: uid as! String,
                            email: email as! String,
-                           confirmed: confirmed as! Bool)
+                           confirmed: confirmed as! Bool,
+                           country: country as! String,
+                           city: city as! String)
     }
     
 }

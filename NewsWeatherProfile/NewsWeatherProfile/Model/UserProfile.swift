@@ -16,4 +16,6 @@ struct UserProfile {
     var uid : String = ""
     var email : String = ""
     var confirmed : Bool = false
+    var country : String = ""
+    var city : String = ""
 }

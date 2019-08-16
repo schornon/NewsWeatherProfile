@@ -36,7 +36,9 @@ class LoginViewModel {
                                                                        "secondName": "",
                                                                        "phoneNumber": "",
                                                                        "uid": uid,
-                                                                       "birthday": ""])
+                                                                       "birthday": "",
+                                                                       "country": "Chose country",
+                                                                       "city": "Chose city"])
                     successHandle()
                 }
             }

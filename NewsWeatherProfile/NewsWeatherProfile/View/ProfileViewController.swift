@@ -69,6 +69,15 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
         let firstName = firstNameTextField.text!
         let secondName = secondNameTextField.text!
         let phone = phoneTextField.text!
+        guard
+            let country = countryButton.titleLabel!.text,
+            !country.contains("Chose")
+            else { countryButton.shake(); return }
+        guard
+            let city = cityButton.titleLabel!.text,
+            !city.contains("Chose")
+            else { cityButton.shake(); return }
+        
         
         let birthday = "\(birthdayTextFields[2].text!)-\(birthdayTextFields[1].text!)-\(birthdayTextFields[0].text!)"
         if validateBirthday(birthday: birthday) == false {
@@ -80,6 +89,8 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
         tabBarViewModel?.userProfile.phoneNumber = phone
         tabBarViewModel?.userProfile.birthday = birthday
         tabBarViewModel?.userProfile.confirmed = true
+        tabBarViewModel?.userProfile.country = country
+        tabBarViewModel?.userProfile.city = city
         
         //updateUserData()
         ProfileViewModel.updateUserData(tabBarViewModel: tabBarViewModel)
@@ -148,6 +159,8 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
         let firstName = self.tabBarViewModel?.userProfile.firstName
         let secondName = self.tabBarViewModel?.userProfile.secondName
         let phoneNumber = self.tabBarViewModel?.userProfile.phoneNumber
+        let country = self.tabBarViewModel?.userProfile.country
+        let city = self.tabBarViewModel?.userProfile.city
         
         self.firstNameTextField.text = firstName
         self.secondNameTextField.text = secondName
@@ -158,6 +171,8 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
             self.birthdayTextFields[1].text = "\(birthday![1])"
             self.birthdayTextFields[0].text = "\(birthday![2])"
         }
+        self.countryButton.setTitle(country, for: .normal)
+        self.cityButton.setTitle(city, for: .normal)
     }
     
     private func lockTabItems(_ action: Bool) {
