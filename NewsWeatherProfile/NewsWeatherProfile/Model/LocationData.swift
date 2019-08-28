@@ -9,10 +9,10 @@
 import Foundation
 
 struct LocationData {
-    var countries : [String] = ["Ukraine", "Poland", "German"]
-    var cityData : [String : [String]] = ["Ukraine": ["Kyiv", "Harkiv", "Dnipro", "Lviv"],
-                                          "Poland": ["Varshava", "Krakov", "Lodz'", "Poznan'"],
-                                          "German": ["Berlin", "Munhen", "Kel'n", "Hamburg"]]
+    var countries : [String] = ["Ukraine", "Poland", "Germany"]
+    var cityData : [String : [String]] = ["Ukraine": ["Kyiv", "Kharkiv", "Dnipro", "Lviv"],
+                                          "Poland": ["Warsaw", "Krakow", "Lodz'", "Poznan"],
+                                          "Germany": ["Berlin", "Munich", "Cologne", "Hamburg"]]
 }
 
 /*

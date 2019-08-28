@@ -27,6 +27,19 @@ extension WeatherViewController {
         
         backgroundView.layer.addSublayer(gradientLayer)
         setBlueGradientBackground()
+        
+        showWeatherInUserProfileLocation()
+    }
+    
+    private func showWeatherInUserProfileLocation() {
+        
+        if tabBarViewModel == nil {
+            weak var tbC = self.tabBarController as? TabBarController
+            tabBarViewModel = tbC?.tabBarViewModel
+        }
+        let userLocation = tabBarViewModel!.userProfile.city
+        print("userLocation: '\(userLocation)'")
+        viewModel?.fetchMetadata(request: userLocation)
     }
     
     func setupTextField(color: UIColor) {

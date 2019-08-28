@@ -20,7 +20,7 @@ extension ProfileViewController {
         let countryMenu = RSSelectionMenu(dataSource: locationData.countries) { (cell, name, indexPath) in
             cell.textLabel!.text = name
         }
-        var cityMenu = RSSelectionMenu(dataSource: [String]()) { (cell, name, indexPath) in
+        var cityMenu = RSSelectionMenu(dataSource: [String]()) { (cell, name, indexPath) in // cityDataSource
             cell.textLabel!.text = name
         }
         

@@ -19,6 +19,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var activityView: UIActivityIndicatorView!
     
     var viewModel : WeatherViewModel?
+    weak var tabBarViewModel : TabBarViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,8 @@ class WeatherViewController: UIViewController {
         
         setBinding()
     }
+    
+    
     
     func setBinding() {
         
