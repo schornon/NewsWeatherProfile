@@ -19,6 +19,9 @@ class TabBarViewModel {
     let myGroup = DispatchGroup()
     
     var userProfile : UserProfile!
+    //var userProfile : Box<UserProfile> = Box(UserProfile())
+    
+    var newsNetworkManager = NewsNetworkManager()
     
     init(clouser: @escaping ()->()) {
         myGroup.enter()
