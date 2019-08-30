@@ -9,9 +9,9 @@
 import Foundation
 
 struct NewsData: Decodable {
-    var status : String
-    var totalResults : String
-    var articles : [NewsArticle]
+    var status : String?
+    var totalResults : Int?
+    var articles = [NewsArticle]()
 }
 
 struct NewsArticle: Decodable {
@@ -26,6 +26,6 @@ struct NewsArticle: Decodable {
 }
 
 struct NewsSource : Decodable {
-    var id : String
-    var name : String
+    var id : String?
+    var name : String?
 }

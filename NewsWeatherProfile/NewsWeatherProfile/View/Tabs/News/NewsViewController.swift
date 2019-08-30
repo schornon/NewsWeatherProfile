@@ -10,37 +10,47 @@ import UIKit
 
 class NewsViewController: UIViewController {
     
+    @IBOutlet weak var newsTableView: UITableView!
+    
     var tabBarViewModel : TabBarViewModel?
     
     override func viewWillAppear(_ animated: Bool) {
-        tabBarViewModel?.newsNetworkManager.fetchData()
+        tabBarViewModel?.newsNetworkManager!.fetchData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViews()
+        
         if tabBarViewModel == nil {
             weak var tbC = self.tabBarController as? TabBarController
             tabBarViewModel = tbC?.tabBarViewModel
-            if tabBarViewModel?.userProfile != nil {
-                print("if tabBarViewModel?.userProfile != nil")
-            }
-            self.tabBarViewModel?.myGroup.notify(queue: .main) {
-                print("self.tabBarViewModel?.myGroup.notify(queue: .main)")
-            }
         }
-
-        /*
-         if tabBarViewModel?.userProfile != nil {
-         fillFilds()
-         }
-         self.tabBarViewModel?.myGroup.notify(queue: .main) {
-         self.fillFilds()
-         }
- */
+        setupBinding()
     }
     
-
+    private func setupBinding() {
+        
+        tabBarViewModel?.userProfile.bind { [unowned self] _ in
+            
+            self.tabBarViewModel?.newsNetworkManager!.fetchData()
+            
+        }
+        
+        tabBarViewModel?.newsData.bind { [unowned self] _ in
+            self.newsTableView.reloadData()
+        }
+    }
+    
+    private func setupViews() {
+        newsTableView.delegate = self
+        newsTableView.dataSource = self
+        
+        newsTableView.tableFooterView = UIView()
+    }
+    
+    @IBAction func unwindToNewsVC(segue: UIStoryboardSegue) {}
     
 
 }

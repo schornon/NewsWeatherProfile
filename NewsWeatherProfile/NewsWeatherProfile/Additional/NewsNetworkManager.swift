@@ -13,6 +13,12 @@ class NewsNetworkManager {
     
     let urlString = "https://newsapi.org/v2/top-headlines?country=ua&apiKey=8349ae6145cd4734b3cb2a1402a82bae"
     
+    var viewModel : TabBarViewModel?
+    
+    init(viewModel: TabBarViewModel) {
+        self.viewModel = viewModel
+    }
+    
     func fetchData() {
         print("fetchData - NewsNetworkManager")
         
@@ -32,10 +38,10 @@ class NewsNetworkManager {
                 if parsedResult.status != "ok" {
                     print("parsedResult.status != 'ok'")
                 }
-                print(parsedResult)
+                self.viewModel?.newsData.value = parsedResult
                 
-            } catch {
-                print("JSONDecoder failure")
+            } catch let error {
+                print("JSONDecoder failure : \(error)")
             }
         }
     }

@@ -22,17 +22,17 @@ class ProfileViewModel {
     
     class func updateUserData(tabBarViewModel: TabBarViewModel?) {
         
-        let user = tabBarViewModel!.userProfile
-        let uid = tabBarViewModel!.userProfile.uid
-        tabBarViewModel!.ref.child("users").child(uid).setValue(["email": user!.email,
+        let user = tabBarViewModel!.userProfile.value
+        let uid = tabBarViewModel!.userProfile.value.uid
+        tabBarViewModel!.ref.child("users").child(uid).setValue(["email": user.email,
                                                                  "confirmed": true,
-                                                                 "firstName": user!.firstName,
-                                                                 "secondName": user!.secondName,
-                                                                 "phoneNumber": user!.phoneNumber,
+                                                                 "firstName": user.firstName,
+                                                                 "secondName": user.secondName,
+                                                                 "phoneNumber": user.phoneNumber,
                                                                  "uid": uid,
-                                                                 "birthday": user!.birthday,
-                                                                 "country": user!.country,
-                                                                 "city": user!.city])
+                                                                 "birthday": user.birthday,
+                                                                 "country": user.country,
+                                                                 "city": user.city])
     }
     
     class func lock(tabBarControllerItems: [UITabBarItem]?, _ action: Bool) {

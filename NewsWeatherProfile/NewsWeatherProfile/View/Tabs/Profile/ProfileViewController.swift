@@ -38,7 +38,7 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
         fillingFields()
         
         if tabBarViewModel?.userProfile != nil {
-            if tabBarViewModel?.userProfile.confirmed == true {
+            if tabBarViewModel?.userProfile.value.confirmed == true {
                 self.lockTabItems(false)
             } else {
                 self.lockTabItems(true)
@@ -84,13 +84,13 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
             self.shakeBirthdayFields()
             return
         }
-        tabBarViewModel?.userProfile.firstName = firstName
-        tabBarViewModel?.userProfile.secondName = secondName
-        tabBarViewModel?.userProfile.phoneNumber = phone
-        tabBarViewModel?.userProfile.birthday = birthday
-        tabBarViewModel?.userProfile.confirmed = true
-        tabBarViewModel?.userProfile.country = country
-        tabBarViewModel?.userProfile.city = city
+        tabBarViewModel?.userProfile.value.firstName = firstName
+        tabBarViewModel?.userProfile.value.secondName = secondName
+        tabBarViewModel?.userProfile.value.phoneNumber = phone
+        tabBarViewModel?.userProfile.value.birthday = birthday
+        tabBarViewModel?.userProfile.value.confirmed = true
+        tabBarViewModel?.userProfile.value.country = country
+        tabBarViewModel?.userProfile.value.city = city
         
         //updateUserData()
         ProfileViewModel.updateUserData(tabBarViewModel: tabBarViewModel)
@@ -156,17 +156,17 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     private func fillFilds() {
-        let firstName = self.tabBarViewModel?.userProfile.firstName
-        let secondName = self.tabBarViewModel?.userProfile.secondName
-        let phoneNumber = self.tabBarViewModel?.userProfile.phoneNumber
-        let country = self.tabBarViewModel?.userProfile.country
-        let city = self.tabBarViewModel?.userProfile.city
+        let firstName = self.tabBarViewModel?.userProfile.value.firstName
+        let secondName = self.tabBarViewModel?.userProfile.value.secondName
+        let phoneNumber = self.tabBarViewModel?.userProfile.value.phoneNumber
+        let country = self.tabBarViewModel?.userProfile.value.country
+        let city = self.tabBarViewModel?.userProfile.value.city
         
         self.firstNameTextField.text = firstName
         self.secondNameTextField.text = secondName
         self.phoneTextField.text = phoneNumber
-        if self.tabBarViewModel?.userProfile.birthday != "" {
-            let birthday = self.tabBarViewModel?.userProfile.birthday.split(separator: "-")
+        if self.tabBarViewModel?.userProfile.value.birthday != "" {
+            let birthday = self.tabBarViewModel?.userProfile.value.birthday.split(separator: "-")
             self.birthdayTextFields[2].text = "\(birthday![0])"
             self.birthdayTextFields[1].text = "\(birthday![1])"
             self.birthdayTextFields[0].text = "\(birthday![2])"

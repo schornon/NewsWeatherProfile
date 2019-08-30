@@ -37,7 +37,7 @@ extension WeatherViewController {
             weak var tbC = self.tabBarController as? TabBarController
             tabBarViewModel = tbC?.tabBarViewModel
         }
-        let userLocation = tabBarViewModel!.userProfile.city
+        let userLocation = tabBarViewModel!.userProfile.value.city
         print("userLocation: '\(userLocation)'")
         viewModel?.fetchMetadata(request: userLocation)
     }

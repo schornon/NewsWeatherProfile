@@ -18,13 +18,16 @@ class TabBarViewModel {
     
     let myGroup = DispatchGroup()
     
-    var userProfile : UserProfile!
-    //var userProfile : Box<UserProfile> = Box(UserProfile())
+    //var userProfile : UserProfile!
+    var userProfile : Box<UserProfile> = Box(UserProfile())
     
-    var newsNetworkManager = NewsNetworkManager()
+    var newsNetworkManager : NewsNetworkManager?
+    var newsData : Box<NewsData> = Box(NewsData())
     
     init(clouser: @escaping ()->()) {
         myGroup.enter()
+        self.newsNetworkManager = NewsNetworkManager(viewModel: self)
+        
         ref = Database.database().reference()
         
         print("curr user: \(user.uid)")
@@ -34,7 +37,7 @@ class TabBarViewModel {
             self.ref.child("users/\(self.user.uid)").observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary ?? [:]
                 print(value)
-                self.userProfile = self.userData(value: value)
+                self.userProfile.value = self.userData(value: value)
                 let confirmed = value["confirmed"] as? Bool
                 if confirmed == false {
                     print("false")
