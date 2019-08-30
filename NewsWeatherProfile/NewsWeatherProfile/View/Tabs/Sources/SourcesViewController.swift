@@ -10,6 +10,7 @@ import UIKit
 
 class SourcesViewController: UIViewController {
 
+    @IBOutlet weak var sourcesTableView: UITableView!
     weak var tabBarViewModel : TabBarViewModel?
     
     var sources = [String]()
@@ -21,6 +22,15 @@ class SourcesViewController: UIViewController {
             weak var tbC = self.tabBarController as? TabBarController
             tabBarViewModel = tbC?.tabBarViewModel
         }
+        
+        setupViews()
+    }
+    
+    private func setupViews() {
+        sourcesTableView.delegate = self
+        sourcesTableView.dataSource = self
+        
+        sourcesTableView.tableFooterView = UIView()
     }
     
     
