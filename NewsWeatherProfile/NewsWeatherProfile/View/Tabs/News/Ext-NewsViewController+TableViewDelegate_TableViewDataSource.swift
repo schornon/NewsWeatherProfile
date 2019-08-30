@@ -25,6 +25,7 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        self.willShowArticle = tabBarViewModel?.newsData.value.articles[indexPath.row]
         performSegue(withIdentifier: "segueFromNewsToNewsDetailsVC", sender: self)
     }
     

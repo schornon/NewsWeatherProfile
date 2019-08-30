@@ -11,8 +11,9 @@ import UIKit
 class NewsViewController: UIViewController {
     
     @IBOutlet weak var newsTableView: UITableView!
-    
     var tabBarViewModel : TabBarViewModel?
+    
+    var willShowArticle : NewsArticle?
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarViewModel?.newsNetworkManager!.fetchData()
@@ -33,10 +34,14 @@ class NewsViewController: UIViewController {
     private func setupBinding() {
         
         tabBarViewModel?.userProfile.bind { [unowned self] _ in
+            self.tabBarViewModel?.newsNetworkManager?.fetchSourcesData()
+        }
+        
+        tabBarViewModel?.sourcesData.bind { [unowned self] _ in
             
             self.tabBarViewModel?.newsNetworkManager!.fetchData()
-            
         }
+        
         
         tabBarViewModel?.newsData.bind { [unowned self] _ in
             self.newsTableView.reloadData()
@@ -52,5 +57,12 @@ class NewsViewController: UIViewController {
     
     @IBAction func unwindToNewsVC(segue: UIStoryboardSegue) {}
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueFromNewsToNewsDetailsVC" {
+            let newsDetailsVC = segue.destination as! NewsDetailsViewController
+            
+            newsDetailsVC.article = self.willShowArticle
+        }
+    }
+    
 }

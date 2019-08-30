@@ -20,6 +20,8 @@
 		A91DA2A1231939DE007FA6F4 /* Ext-NewsViewController+TableViewDelegate_TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DA2A0231939DE007FA6F4 /* Ext-NewsViewController+TableViewDelegate_TableViewDataSource.swift */; };
 		A91DA2A323193C12007FA6F4 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DA2A223193C12007FA6F4 /* NewsTableViewCell.swift */; };
 		A91DA2A523194865007FA6F4 /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DA2A423194865007FA6F4 /* NewsDetailsViewController.swift */; };
+		A91DA2A7231961BE007FA6F4 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DA2A6231961BE007FA6F4 /* NewsViewModel.swift */; };
+		A91DA2A923197A2A007FA6F4 /* SourcesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DA2A823197A2A007FA6F4 /* SourcesData.swift */; };
 		A95CBAF822F98FE30079E4FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A95CBAF722F98FE30079E4FF /* GoogleService-Info.plist */; };
 		A95CBAFC22F9AF7D0079E4FF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95CBAFB22F9AF7D0079E4FF /* TabBarController.swift */; };
 		A95CBAFF22F9C6880079E4FF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95CBAFE22F9C6880079E4FF /* RegistrationViewController.swift */; };
@@ -56,6 +58,8 @@
 		A91DA2A0231939DE007FA6F4 /* Ext-NewsViewController+TableViewDelegate_TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext-NewsViewController+TableViewDelegate_TableViewDataSource.swift"; sourceTree = "<group>"; };
 		A91DA2A223193C12007FA6F4 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		A91DA2A423194865007FA6F4 /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
+		A91DA2A6231961BE007FA6F4 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		A91DA2A823197A2A007FA6F4 /* SourcesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesData.swift; sourceTree = "<group>"; };
 		A95CBAF722F98FE30079E4FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A95CBAFB22F9AF7D0079E4FF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A95CBAFE22F9C6880079E4FF /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 				A9737D4622FAEB390042F0A4 /* TabBarViewModel.swift */,
 				A913C99C230409C0009C1EA3 /* ProfileViewModel.swift */,
 				A913C99E23041D68009C1EA3 /* WeatherViewModel.swift */,
+				A91DA2A6231961BE007FA6F4 /* NewsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				A9737D4822FAEB810042F0A4 /* UserProfile.swift */,
 				A9D08346230592C30095C476 /* LocationData.swift */,
 				A913C9A023041D8D009C1EA3 /* WeatherMetadata.swift */,
+				A91DA2A823197A2A007FA6F4 /* SourcesData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -365,10 +371,12 @@
 				A95CBAFC22F9AF7D0079E4FF /* TabBarController.swift in Sources */,
 				A96D797222FC0C8A00509EAA /* NewsViewController.swift in Sources */,
 				A96D797822FC0CCD00509EAA /* SourcesViewController.swift in Sources */,
+				A91DA2A7231961BE007FA6F4 /* NewsViewModel.swift in Sources */,
 				A998B4CA22F8425E00ECF561 /* AppDelegate.swift in Sources */,
 				A913C99F23041D68009C1EA3 /* WeatherViewModel.swift in Sources */,
 				A9D08345230587200095C476 /* Extension-ProfileViewController.swift in Sources */,
 				A998B4DD22F845AB00ECF561 /* LoginViewModel.swift in Sources */,
+				A91DA2A923197A2A007FA6F4 /* SourcesData.swift in Sources */,
 				A96D797622FC0CB000509EAA /* ProfileViewController.swift in Sources */,
 				A913C9A623041DDB009C1EA3 /* Extension-WeatherViewController.swift in Sources */,
 				A9737D4922FAEB810042F0A4 /* UserProfile.swift in Sources */,

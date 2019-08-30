@@ -11,7 +11,9 @@ import Alamofire
 
 class NewsNetworkManager {
     
-    let urlString = "https://newsapi.org/v2/top-headlines?country=ua&apiKey=8349ae6145cd4734b3cb2a1402a82bae"
+    let urlString = "https://newsapi.org/v2/top-headlines?country=us&apiKey=8349ae6145cd4734b3cb2a1402a82bae"
+    
+    let sourcesUrlString = "https://newsapi.org/v2/sources?apiKey=8349ae6145cd4734b3cb2a1402a82bae"
     
     var viewModel : TabBarViewModel?
     
@@ -44,5 +46,29 @@ class NewsNetworkManager {
                 print("JSONDecoder failure : \(error)")
             }
         }
+    }
+    
+    func fetchSourcesData() {
+        
+        guard let url = URL(string: sourcesUrlString) else {
+            return
+        }
+        
+        Alamofire.request(url).responseJSON { (response) in
+            guard let data = response.data else {
+                print("guard response.data sources error")
+                return
+            }
+            do {
+                let parsedResult = try JSONDecoder().decode(SourcesData.self, from: data)
+                if parsedResult.status != "ok" {
+                    print("sources parsedResult.status != 'ok'")
+                }
+                self.viewModel?.sourcesData.value = parsedResult
+            } catch let error {
+                print(error)
+            }
+        }
+        
     }
 }
