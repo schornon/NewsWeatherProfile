@@ -11,6 +11,7 @@ import Foundation
 struct SourcesData : Decodable {
     var status : String?
     var sources = [Source]()
+    var favoriteSources : [Source]?
 }
 
 struct Source : Decodable {

@@ -31,6 +31,10 @@ class SourcesViewController: UIViewController {
         sourcesTableView.dataSource = self
         
         sourcesTableView.tableFooterView = UIView()
+        
+        if tabBarViewModel?.sourcesData.value.favoriteSources == nil {
+           tabBarViewModel?.sourcesData.value.favoriteSources = [Source]()
+        }
     }
     
     

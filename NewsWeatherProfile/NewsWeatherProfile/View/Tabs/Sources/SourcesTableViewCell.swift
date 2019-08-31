@@ -11,6 +11,7 @@ import UIKit
 class SourcesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var favoriteImageView: UIImageView!
     
     
     override func awakeFromNib() {

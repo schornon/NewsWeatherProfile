@@ -11,7 +11,10 @@ import Alamofire
 
 class NewsNetworkManager {
     
-    let urlString = "https://newsapi.org/v2/top-headlines?country=us&apiKey=8349ae6145cd4734b3cb2a1402a82bae"
+    let base = "https://newsapi.org/v2/top-headlines"
+    let apiKey = "&apiKey=8349ae6145cd4734b3cb2a1402a82bae"
+    var sources = "?sources="
+    
     
     let sourcesUrlString = "https://newsapi.org/v2/sources?apiKey=8349ae6145cd4734b3cb2a1402a82bae"
     
@@ -24,10 +27,13 @@ class NewsNetworkManager {
     func fetchData() {
         print("fetchData - NewsNetworkManager")
         
-        guard let url = URL(string: "\(urlString)") else {
+        formSourceString()
+        guard let url = URL(string: "\(base)\(sources)\(apiKey)") else { //?sources=abc-news
             print("guard newsURL fail")
+            print("^^^\(base)\(sources)\(apiKey)^^^")
             return
         }
+        print(url)
         Alamofire.request(url).responseJSON { (response) in
             print("news Alamofire success")
             guard let data = response.data else {
@@ -69,6 +75,24 @@ class NewsNetworkManager {
                 print(error)
             }
         }
-        
+    }
+    
+    private func formSourceString() {
+        self.sources = "?sources="
+        if viewModel?.sourcesData.value.favoriteSources != nil && (viewModel?.sourcesData.value.favoriteSources?.count)! > 0 {
+            let uFavoriteSources = (viewModel?.sourcesData.value.favoriteSources!)!
+            var i = 0
+            for source in uFavoriteSources {
+                guard let id = source.id else { return }
+                if i == 0 {
+                    self.sources += "\(id)"
+                } else {
+                    self.sources += ",\(id)"
+                }
+                i += 1
+            }
+        } else {
+            self.sources += "abc-news,ansa,bbc-news,bloomberg"
+        }
     }
 }
