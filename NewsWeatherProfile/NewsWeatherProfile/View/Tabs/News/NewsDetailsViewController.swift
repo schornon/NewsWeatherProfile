@@ -23,12 +23,13 @@ class NewsDetailsViewController: UIViewController {
         
         imageView.isHidden = true
         
-        setupBinding()
-        
         setupViews()
     }
     
     private func setupViews() {
+        
+        imageView.layer.cornerRadius = 3
+        imageView.layer.masksToBounds = true
         
         if let titleText = article?.title {
             self.titleLabel.text = titleText
@@ -59,14 +60,7 @@ class NewsDetailsViewController: UIViewController {
         })
     }
     
-    private func setupBinding() {
-        
-//        newsViewModel.image.bind { [unowned self] in
-//
-//            self.imageView.image = $0
-//            self.imageView.isHidden = false
-//        }
-    }
+
 
     @IBAction func goBackToNewsVC(_ sender: Any) {
         performSegue(withIdentifier: "unwindSegueToNewsVC", sender: self)

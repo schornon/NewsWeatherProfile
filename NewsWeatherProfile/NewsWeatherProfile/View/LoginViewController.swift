@@ -17,7 +17,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setTextInFields()
+        //setTextInFields()
+        
+        //setupViews()
     }
 
     @IBAction func loginButton(_ sender: UIButton) {
@@ -31,6 +33,18 @@ class LoginViewController: UIViewController {
                 strongSelf.passwordTextField.shake()
             }
         }
+    }
+    
+    private func setupViews() {
+        loginTextField.layer.borderColor = UIColor(red: 0.0, green: 0.47843137254901963, blue: 1.0, alpha: 0.8).cgColor
+        loginTextField.layer.borderWidth = 1
+        loginTextField.layer.cornerRadius = 3
+        loginTextField.layer.masksToBounds = true
+        
+        passwordTextField.layer.borderColor = UIColor(red: 0.0, green: 0.47843137254901963, blue: 1.0, alpha: 0.8).cgColor
+        passwordTextField.layer.borderWidth = 1
+        passwordTextField.layer.cornerRadius = 3
+        passwordTextField.layer.masksToBounds = true
     }
     
     private func setTextInFields() {
