@@ -22,13 +22,18 @@ class NewsViewModel {
         }
         
         DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url)
-            self.image = UIImage(data: data!)!
-            DispatchQueue.main.async {
-                clouser()
+            do {
+                let data = try Data(contentsOf: url)
+                if let img = UIImage(data: data) {
+                    self.image = img
+                    DispatchQueue.main.async {
+                        clouser()
+                    }
+                }
+            } catch let error {
+                print(error)
             }
         }
-        
     }
     
     
