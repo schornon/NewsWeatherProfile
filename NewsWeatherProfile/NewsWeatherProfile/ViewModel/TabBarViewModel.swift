@@ -24,7 +24,7 @@ class TabBarViewModel {
     var newsNetworkManager : NewsNetworkManager?
     var newsData : Box<NewsData> = Box(NewsData())
     var sourcesData : Box<SourcesData> = Box(SourcesData())
-    var favoriteSources = [Source]()
+    var pageSize : Box<Int> = Box(10)
     
     init(clouser: @escaping ()->()) {
         myGroup.enter()

@@ -37,6 +37,9 @@ extension SourcesViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if tabBarViewModel?.pageSize.value != 10 {
+           tabBarViewModel?.pageSize.value = 10
+        }
         
         let cell = tableView.cellForRow(at: indexPath) as! SourcesTableViewCell
         

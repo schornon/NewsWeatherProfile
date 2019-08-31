@@ -46,6 +46,10 @@ class NewsViewController: UIViewController {
         tabBarViewModel?.newsData.bind { [unowned self] _ in
             self.newsTableView.reloadData()
         }
+        
+        tabBarViewModel?.pageSize.bind { [unowned self] _ in
+            self.tabBarViewModel?.newsNetworkManager!.fetchData()
+        }
     }
     
     private func setupViews() {

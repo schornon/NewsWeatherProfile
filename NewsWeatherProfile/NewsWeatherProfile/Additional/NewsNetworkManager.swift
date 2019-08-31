@@ -28,7 +28,8 @@ class NewsNetworkManager {
         print("fetchData - NewsNetworkManager")
         
         formSourceString()
-        guard let url = URL(string: "\(base)\(sources)\(apiKey)") else { //?sources=abc-news
+        guard let pageSize = viewModel?.pageSize.value else { return }
+        guard let url = URL(string: "\(base)\(sources)\(apiKey)&pageSize=\(pageSize)") else { //?sources=abc-news
             print("guard newsURL fail")
             print("^^^\(base)\(sources)\(apiKey)^^^")
             return

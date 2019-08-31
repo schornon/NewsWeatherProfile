@@ -20,6 +20,9 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
         
         cell.titleLabel.text = tabBarViewModel?.newsData.value.articles[indexPath.row].title
         
+        if indexPath.row + 3 > (tabBarViewModel?.pageSize.value)! {
+            tabBarViewModel?.pageSize.value += 10
+        }
         return cell
     }
     
